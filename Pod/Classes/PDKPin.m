@@ -101,11 +101,11 @@ static NSString * const kPDKPinterestWebPinItURLString = @"http://www.pinterest.
     
     // these params need to be double encoded because of the way they are decoded in the Pinterest client app.
     NSDictionary *params = @{@"app_id" : [PDKClient sharedInstance].appId,
-                             @"image_url" : [[imageURL absoluteString] _PDK_urlEncodedString],
-                             @"source_url" : [[sourceURL absoluteString] _PDK_urlEncodedString],
+                             @"image_url" : [imageURL absoluteString],
+                             @"source_url" : [sourceURL absoluteString],
                              @"app_name" : [appName _PDK_urlEncodedString],
-                             @"suggested_board_name" : [suggestedBoardName _PDK_urlEncodedString],
-                             @"description" : [pinDescription _PDK_urlEncodedString],
+                             @"suggested_board_name" : suggestedBoardName,
+                             @"description" : pinDescription,
                              };
     
     // check to see if the Pinterest app is installed
